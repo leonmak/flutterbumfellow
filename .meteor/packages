@@ -36,3 +36,7 @@ random
 ejson
 spacebars
 check
+cfs:filesystem
+cfs:standard-packages
+mizzao:jquery-ui
+mrt:fullcalendar

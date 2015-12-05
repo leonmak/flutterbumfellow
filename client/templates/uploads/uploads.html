@@ -1,13 +1,28 @@
 <template name="uploads">
     <div class="panel panel-default">
-      <div class="panel-heading">
-        <h3 class="panel-title">Uploads</h3>
-      </div>
-      <div class="panel-body">
+        <div class="panel-heading">
+            <h3 class="panel-title">Uploads</h3>
+        </div>
+        <div class="panel-body">
+            Add Files &nbsp;
+            <span class="btn btn-default btn-file">Browse
+                <input type="file" name="myFileInput" class="myFileInput">
+            </span>
 
-      </div>
-      <div class="panel-footer">
-
-      </div>
+            <div class="col-md-9 fileTable">
+                <table class="table table-hover table-bordered table-striped">
+                    <thead>
+                        <th>Name</th>
+                        <th>Downloads</th>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Name</td>
+                            <td><a href="#" class="btn btn-primary">Downloads</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
     </div>
 </template>

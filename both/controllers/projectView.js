@@ -1,14 +1,18 @@
 ProjectController = AppController.extend({
   waitOn: function() {
-    this.subscribe("customers");
-    return this.subscribe('projects');
+      this.subscribe("customers");
+      this.subscribe("conversations", this.params.id); //id from url
+      this.subscribe("todos", this.params.id);
+      this.subscribe("calevents", this.params.id);
+      this.subscribe("uploads", this.params.id);
+      return this.subscribe('projects');
   },
   data: function(){
+    Session.set('active_project',this.params.id);
     return Projects.findOne({_id:this.params.id});
-
   },
   onAfterAction: function () {
-    Meta.setTitle('Project View' + Meta.options.suffix);
+    Meta.setTitle('Project View | ' + Meta.options.suffix);
     // console.log(Meta);
   }
 });

@@ -1,7 +1,7 @@
 Template.dashboard.rendered = function() {
 
 };
-// 
+//
 // Template.dashboard.events({
 //     'keyup input[type=text]': function(event,tmpl){
 //         if(event.which === 27 || event.which === 13){
@@ -12,3 +12,10 @@ Template.dashboard.rendered = function() {
 //         }
 //     }
 // })
+//
+//
+Template.projectView.helpers({
+    editing_calevent: function(){
+        return Session.get('editing_calevent');
+    }
+});
