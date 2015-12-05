@@ -4,10 +4,15 @@
   <![endif]-->
 
   {{> _header}}
+<div class="container-fluid">
+    <div class="row">
+        {{> sidebar}}
+        <div class="col-md-10">
+            {{> yield}}
+        </div>
+    </div>
+</div>
 
-  <div class="container">
-    {{> yield}}
-  </div>
 
   {{> _footer}}
 </template>

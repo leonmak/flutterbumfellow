@@ -1,0 +1,24 @@
+<template name="projectView">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title"></h3>
+        </div>
+        <div class="panel-body">
+            <div class="col-md-3">
+                {{>activity}}
+                {{>uploads}}
+            </div>
+            <div class="col-md-9">
+                {{>calendar}}
+                {{>conversations}}
+
+            </div>
+            <div class="col-md-8">
+                {{>todos}}
+            </div>
+            <div class="col-md-4">
+                {{>invited}}
+            </div>
+        </div>
+    </div>
+</template>
