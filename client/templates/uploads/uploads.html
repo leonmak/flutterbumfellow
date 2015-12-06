@@ -5,24 +5,28 @@
         </div>
         <div class="panel-body">
             Add Files &nbsp;
-            <span class="btn btn-default btn-file">Browse
-                <input type="file" name="myFileInput" class="myFileInput">
-            </span>
-
-            <div class="col-md-9 fileTable">
-                <table class="table table-hover table-bordered table-striped">
+            <span class="btn btn-default btn-file">Browse <input type="file" name="myFileInput" class="myFileInput"></span>
+            <div class="fileTable">
+                <table class="table table-hover table-striped table-responsive">
                     <thead>
-                        <th>Name</th>
-                        <th>Downloads</th>
+                        <th>File Name</th>
+                        <th></th>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>Name</td>
-                            <td><a href="#" class="btn btn-primary">Downloads</a></td>
-                        </tr>
+                        {{#each uploads}}
+                        {{>upload}}
+                        {{/each}}
                     </tbody>
                 </table>
             </div>
         </div>
+
     </div>
+</template>
+<template name="upload">
+    <tr>
+        <td class="col-md-10">{{name}}</td>
+<!-- file download helper {{url download=true}} function from fs package -->
+        <td><a target="_blank" href="{{url download=true}}" class="btn btn-primary"><i class="fa fa-download"></i></a></td>
+    </tr>
 </template>
