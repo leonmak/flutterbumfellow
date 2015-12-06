@@ -32,5 +32,4 @@ DashboardController.events({
           Meteor.call('saveProject', project);
       }
   }
-
 });

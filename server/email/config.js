@@ -31,6 +31,12 @@ Meteor.startup(function() {
             project.invited = [];
             return Projects.insert(project);
         },
+        'removeProject':function(id){
+            return Projects.remove({_id:id});
+        },
+        'updateProjectName': function (id, name) {
+            return Projects.update({_id: id}, {$set: {name: name}});
+        },
         'addCalEvent': function (calevent) {
           if (!calevent.type) {
             calevent.type = 'milestone';

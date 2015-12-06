@@ -12,7 +12,7 @@ ProjectController = AppController.extend({
     return Projects.findOne({_id:this.params.id});
   },
   onAfterAction: function () {
-    Meta.setTitle('Project View | ' + Meta.options.suffix);
+    Meta.setTitle('Project View | ');
     // console.log(Meta);
   }
 });

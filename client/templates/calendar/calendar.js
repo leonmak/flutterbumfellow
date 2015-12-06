@@ -66,7 +66,7 @@ Template.caltask.events({
         Meteor.call('removeCalEvent',Session.get('editing_calevent'));
         Session.set('editing_calevent',null);
     },
-    'click .saveTask':function(evt,tmpl){
+    'click .saveTask':function(calevent,tmpl){
         var type = tmpl.find('.taskTitle').value;
         if(tmpl.find('.name')){
           var name = tmpl.find('.name').value;
