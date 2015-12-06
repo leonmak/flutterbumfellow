@@ -9,7 +9,9 @@
                     <a href="#" class="addConversation"> Start a conversation</a>
                 </h5>
                 <table >
-                    {{>conversation}}
+                    {{#each conversations}}
+                      {{>conversation}}
+                    {{/each}}
                 </table>
             </div>
         </div>
@@ -22,14 +24,14 @@
 <template name="conversation">
     <tr>
         <td class="col-md-1"><i class="fa fa-folder"></i></td>
-        <td class="col-md-2">Email</td>
-        <td class="col-md-5"><a href="#" class ="shorten">Note></a></td>
-        <td class="col-md-2">Date Added</td>
+        <td class="col-md-2">{{username}}</td>
+        <td class="col-md-5">{{note}}</td>
+        <td class="col-md-2">{{formatdate dateadded}}</td>
         <td class="col-md-1"><button type="button" class="btn btn-default btn-xs archiveConversation">
-            <i class="fa fa-minus-square-o "></i> Archive
+          <i class="fa fa-minus-square-o "></i> Archive
         </button>
-    </td>
-    <td colspan="5"><hr></td>
+      </td>
+      <td colspan="5"><hr></td>
 </tr>
 
 </template>

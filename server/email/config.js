@@ -38,31 +38,38 @@ Meteor.startup(function() {
             return Projects.update({_id: id}, {$set: {name: name}});
         },
         'addCalEvent': function (calevent) {
-          if (!calevent.type) {
-            calevent.type = 'milestone';
-          }
-          return Calevents.insert(calevent);
+            if (!calevent.type) {
+                calevent.type = 'milestone';
+            }
+            return Calevents.insert(calevent);
         },
         'updateCalEvent':function(calevent){
-          return Calevents.update({_id:calevent._id},{
-            $set:{
-              title:calevent.title,
-              project:calevent.project,
-              type:calevent.type
-            }
-          })
+            return Calevents.update({_id:calevent._id},{
+                $set:{
+                    title:calevent.title,
+                    project:calevent.project,
+                    type:calevent.type
+                }
+            })
         },
         'updateEventTimes':function(calEvent){
-          return Calevents.update({_id:calEvent._id},{
-            $set:{
-              title:calEvent.title,
-              start:calEvent.start,
-              end:calEvent.end
-            }
-          })
+            return Calevents.update({_id:calEvent._id},{
+                $set:{
+                    title:calEvent.title,
+                    start:calEvent.start,
+                    end:calEvent.end
+                }
+            })
         },
         'removeCalEvent':function(id){
-          return Calevents.remove({_id:id});
-        }
+            return Calevents.remove({_id:id});
+        },
+        'addConversation':function(conversation){
+            return Conversations.insert(conversation);
+        },
+        'archiveConversation':function(id,archived){
+            Conversations.update({_id:id},{$set:{archived:archived}});
+        },
+
     });
 });

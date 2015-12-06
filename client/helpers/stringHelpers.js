@@ -3,11 +3,6 @@ Template.registerHelper('truncate', function(string, length) {
     return s(cleanString).truncate(length);
 });
 
-Template.registerHelper('summarize', function(string) {
-    var cleanString = s(string).stripTags();
-    return s(cleanString).truncate(length);
-});
-
 
 Template.registerHelper('formatdate', function(datetime) {
     if(moment && datetime){

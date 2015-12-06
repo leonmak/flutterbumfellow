@@ -16,6 +16,9 @@ Template.dashboard.helpers({
 Template.projectView.helpers({
     editing_calevent: function(){
         return Session.get('editing_calevent');
+    },
+    adding_conversation: function(){
+        return Session.get('adding_conversation');
     }
 });
 Template.delconfirm.events({
