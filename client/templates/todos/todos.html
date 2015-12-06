@@ -1,4 +1,8 @@
 <template name="todos">
+    {{#if adding_todo}}
+        {{>todoDlg}}
+    {{/if}}
+
   <div class="panel panel-default">
     <div class="panel-heading">
       <h3 class="panel-title">To Do List</h3>
