@@ -5,6 +5,7 @@ ProjectController = AppController.extend({
       this.subscribe("todos", this.params.id);
       this.subscribe("calevents", this.params.id);
       this.subscribe("uploads", this.params.id);
+      this.subscribe("directory");
       return this.subscribe('projects');
   },
   data: function(){
@@ -12,7 +13,7 @@ ProjectController = AppController.extend({
     return Projects.findOne({_id:this.params.id});
   },
   onAfterAction: function () {
-    Meta.setTitle('Project View | ');
+    Meta.setTitle('Project View ');
     // console.log(Meta);
   }
 });

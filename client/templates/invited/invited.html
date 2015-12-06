@@ -1,13 +1,33 @@
 <template name="invited">
     <div class="panel panel-default">
-      <div class="panel-heading">
-        <h3 class="panel-title">Invited</h3>
-      </div>
-      <div class="panel-body">
+        <div class="panel-heading">
+            <h3 class="panel-title">Invite List</h3>
+        </div>
+        <div class="panel-body">
+            <h5>Add Users</h5>
+            <select  name="userToInvite" id="userToInvite">
 
-      </div>
-      <div class="panel-footer">
+                {{#each userList}}
+                <!-- {{#if profile.firstName}} -->
+                <option value="{{_id}}">{{#each emails}} {{address}}{{/each}}</option>
+                <!-- {{/if}} -->
+                {{/each}}
+            </select>
+            &nbsp;<i class="fa fa-plus inviteUser"></i>
+            <hr/>
+            <table class="table table-hover table-striped">
+                <h5>Invited Users</h5>
 
-      </div>
+                {{#each invited}}
+                <tr><td width="250px">{{#each emails}} {{address}}{{/each}}</td>
+                    <!-- {{#if profile.firstName}} {{profile.firstName}} {{profile.lastName}}{{else}}{{username}}{{/if}} -->
+
+                    <td>{{#if isowner ..}} <i class="fa fa-trash removeUser"></i>{{/if}}</td>
+                </tr>
+                {{/each}}
+            </table>
+
+        </div>
+
     </div>
 </template>

@@ -83,6 +83,22 @@ Meteor.startup(function() {
             todo.completed = false;
             return Todos.insert(todo);
         },
+        'inviteUser':function(projectid,userId){
+            var project = Projects.findOne({_id:projectid});
+            if(!project || project.userId !== this.userId){
+                throw new Meteor.Error(404,"No Such Project !");
+            }
+            if(userId !== project.userId && !_.contains(project.invited,userId)){
+                Projects.update(projectid,{$addToSet:{invited:userId}});
+            }
+        },
+        'removeInvite':function(projectid,userId){
+            var project = Projects.findOne({_id:projectid});
+            if(!project || project.userId !== this.userId){
+                throw new Meteor.Error(404,"No Such Project !");
+            }
+            Projects.update(projectid,{$pull:{invited:userId}});
+        },
 
     });
 });
